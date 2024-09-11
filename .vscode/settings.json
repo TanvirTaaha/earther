@@ -1,0 +1,18 @@
+{
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 1000,
+  "files.associations": {
+    "*.heex": "phoenix-heex"
+  },
+  "scss.validate": false,
+  "css.validate": false,
+  "emmet.includeLanguages": {
+    "elixir": "html",
+    "phoenix-heex": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "elixirLS.fetchDeps": false,
+  "editor.formatOnPaste": true,
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": true
+}
