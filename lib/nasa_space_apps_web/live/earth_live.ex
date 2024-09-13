@@ -3,7 +3,10 @@ defmodule NasaSpaceAppsWeb.EarthLive do
 
   def render(assigns) do
     ~H"""
-    <div id="my-hook" phx-hook="EarthScene" phx-update="ignore"></div>
+    <div id="EarthScene-hook" phx-hook="EarthScene" phx-update="ignore">
+      <div id="floatingDiv">Hello from the box!</div>
+      <canvas id="earthScene" />
+    </div>
     """
   end
 end

@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@splinetool/loader": "^1.9.25",
-    "three": "^0.135.0"
+    "three": "^0.168.0"
   }
 }

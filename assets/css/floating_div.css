@@ -1,0 +1,7 @@
+#floatingDiv {
+  position: absolute;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  @apply text-white bg-transparent border-s-4 rounded-lg border-teal-300
+}
