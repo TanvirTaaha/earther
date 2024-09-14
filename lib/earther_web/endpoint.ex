@@ -7,7 +7,7 @@ defmodule EartherWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_earther_key",
-    signing_salt: "2nQP70jk",
+    signing_salt: "TgA9wNyI",
     same_site: "Lax"
   ]
 
@@ -31,7 +31,6 @@ defmodule EartherWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :earther
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

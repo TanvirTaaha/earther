@@ -1,12 +1,5 @@
 import Config
 
-# Configure your database
-config :earther, Earther.Repo,
-  database: Path.expand("../earther_dev.db", __DIR__),
-  pool_size: 5,
-  stacktrace: true,
-  show_sensitive_data_on_connection_error: true
-
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #
@@ -16,11 +9,11 @@ config :earther, Earther.Repo,
 config :earther, EartherWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {127, 0, 0, 1}, port: 4001],
+  http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "1nAXeEC5hS5V5iHd5XCZSmX0FZvgYcSAtV4IZ03qzXgYbnllPeWZuD4gndLTPexP",
+  secret_key_base: "ZpR2Zw3l0jkw0F4ZkBGS1fiCNJv40o1sEk1Tdjlk0TDhDW7JGIkrYSfK5T+NMJ41",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:earther, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:earther, ~w(--watch)]}

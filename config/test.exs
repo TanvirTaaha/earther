@@ -1,20 +1,10 @@
 import Config
 
-# Configure your database
-#
-# The MIX_TEST_PARTITION environment variable can be used
-# to provide built-in test partitioning in CI environment.
-# Run `mix help test` for more information.
-config :earther, Earther.Repo,
-  database: Path.expand("../earther_test.db", __DIR__),
-  pool_size: 5,
-  pool: Ecto.Adapters.SQL.Sandbox
-
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :earther, EartherWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "3457Y0cbvAG2kWqYFcSpAZqrqDm/XirJf0P8hO9wx96aLWAO7ZeYNy+0hbUJPEx9",
+  secret_key_base: "vaJgxJvG2bGAFcywkPtK+5zMjV4tQOowdMKPS9E4U5nQE0N+WPLH879sd8U4xRWo",
   server: false
 
 # In test we don't send emails

@@ -8,7 +8,6 @@
 import Config
 
 config :earther,
-  ecto_repos: [Earther.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
@@ -20,7 +19,7 @@ config :earther, EartherWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Earther.PubSub,
-  live_view: [signing_salt: "gCRmaU86"]
+  live_view: [signing_salt: "yrPJc73u"]
 
 # Configures the mailer
 #
