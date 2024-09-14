@@ -18,18 +18,22 @@ ARG DEBIAN_VERSION=bullseye-20240904-slim
 ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
 ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 
-FROM ${BUILDER_IMAGE} as builder
+FROM ${BUILDER_IMAGE} AS builder
 
 # install build dependencies
-RUN apt-get update -y && apt-get install -y build-essential git \
-    && apt-get clean && rm -f /var/lib/apt/lists/*_*
+RUN apt-get update -y \
+  && apt-get install -y \
+  build-essential \
+  git \
+  curl \
+  && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # prepare build dir
 WORKDIR /app
 
 # install hex + rebar
 RUN mix local.hex --force && \
-    mix local.rebar --force
+  mix local.rebar --force
 
 # set build ENV
 ENV MIX_ENV="prod"
@@ -51,6 +55,20 @@ COPY lib lib
 
 COPY assets assets
 
+ENV NODE_VERSION=22.8.0
+ENV NVM_DIR=/root/.nvm
+
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash \
+  && . "$NVM_DIR/nvm.sh" \
+  && nvm install ${NODE_VERSION} \
+  && nvm alias default v${NODE_VERSION} \
+  && nvm use v${NODE_VERSION} 
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+
+RUN echo "node --version " && node --version
+RUN echo "npm --version " && npm --version
+
+RUN mix cmd npm install --prefix assets
 # compile assets
 RUN mix assets.deploy
 
