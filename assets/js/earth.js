@@ -216,7 +216,7 @@ export const EarthScene = {
 
     const animate = () => {
       if (loadedModel) {
-        loadedModel.scene.rotation.y += 0.005;
+        scene_obj.controls.autoRotate = true;
         project_to_camera();
       }
     };
