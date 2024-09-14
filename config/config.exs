@@ -7,19 +7,19 @@
 # General application configuration
 import Config
 
-config :nasa_space_apps,
-  ecto_repos: [NasaSpaceApps.Repo],
+config :earther,
+  ecto_repos: [Earther.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
-config :nasa_space_apps, NasaSpaceAppsWeb.Endpoint,
+config :earther, EartherWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: NasaSpaceAppsWeb.ErrorHTML, json: NasaSpaceAppsWeb.ErrorJSON],
+    formats: [html: EartherWeb.ErrorHTML, json: EartherWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: NasaSpaceApps.PubSub,
+  pubsub_server: Earther.PubSub,
   live_view: [signing_salt: "gCRmaU86"]
 
 # Configures the mailer
@@ -29,12 +29,12 @@ config :nasa_space_apps, NasaSpaceAppsWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :nasa_space_apps, NasaSpaceApps.Mailer, adapter: Swoosh.Adapters.Local
+config :earther, Earther.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",
-  nasa_space_apps: [
+  earther: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
@@ -44,7 +44,7 @@ config :esbuild,
 # Configure tailwind (the version is required)
 config :tailwind,
   version: "3.4.3",
-  nasa_space_apps: [
+  earther: [
     args: ~w(
       --config=tailwind.config.js
       --input=css/app.css

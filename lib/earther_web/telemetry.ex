@@ -1,4 +1,4 @@
-defmodule NasaSpaceAppsWeb.Telemetry do
+defmodule EartherWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -52,23 +52,23 @@ defmodule NasaSpaceAppsWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("nasa_space_apps.repo.query.total_time",
+      summary("earther.repo.query.total_time",
         unit: {:native, :millisecond},
         description: "The sum of the other measurements"
       ),
-      summary("nasa_space_apps.repo.query.decode_time",
+      summary("earther.repo.query.decode_time",
         unit: {:native, :millisecond},
         description: "The time spent decoding the data received from the database"
       ),
-      summary("nasa_space_apps.repo.query.query_time",
+      summary("earther.repo.query.query_time",
         unit: {:native, :millisecond},
         description: "The time spent executing the query"
       ),
-      summary("nasa_space_apps.repo.query.queue_time",
+      summary("earther.repo.query.queue_time",
         unit: {:native, :millisecond},
         description: "The time spent waiting for a database connection"
       ),
-      summary("nasa_space_apps.repo.query.idle_time",
+      summary("earther.repo.query.idle_time",
         unit: {:native, :millisecond},
         description:
           "The time the connection spent waiting before being checked out for the query"
@@ -86,7 +86,7 @@ defmodule NasaSpaceAppsWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {NasaSpaceAppsWeb, :count_users, []}
+      # {EartherWeb, :count_users, []}
     ]
   end
 end

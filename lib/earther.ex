@@ -1,6 +1,6 @@
-defmodule NasaSpaceApps do
+defmodule Earther do
   @moduledoc """
-  NasaSpaceApps keeps the contexts that define your domain
+  Earther keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

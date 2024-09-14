@@ -216,15 +216,11 @@ export const EarthScene = {
 
     const animate = () => {
       if (loadedModel) {
-        // loadedModel.scene.rotation.y += 0.005;
+        loadedModel.scene.rotation.y += 0.005;
         project_to_camera();
       }
-      // requestAnimationFrame(animate);
     };
     scene_obj.setAnimationCallback(animate);
     scene_obj.animate();
-    // animate();
-    //  console.log("Hello2");
-
   }
 }

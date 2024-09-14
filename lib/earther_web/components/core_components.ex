@@ -1,4 +1,4 @@
-defmodule NasaSpaceAppsWeb.CoreComponents do
+defmodule EartherWeb.CoreComponents do
   @moduledoc """
   Provides core UI components.
 
@@ -17,7 +17,7 @@ defmodule NasaSpaceAppsWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import NasaSpaceAppsWeb.Gettext
+  import EartherWeb.Gettext
 
   @doc """
   Renders a modal.
@@ -661,9 +661,9 @@ defmodule NasaSpaceAppsWeb.CoreComponents do
     # with our gettext backend as first argument. Translations are
     # available in the errors.po file (as we use the "errors" domain).
     if count = opts[:count] do
-      Gettext.dngettext(NasaSpaceAppsWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(EartherWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(NasaSpaceAppsWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(EartherWeb.Gettext, "errors", msg, opts)
     end
   end
 

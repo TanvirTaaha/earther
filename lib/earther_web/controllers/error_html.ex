@@ -1,17 +1,17 @@
-defmodule NasaSpaceAppsWeb.ErrorHTML do
+defmodule EartherWeb.ErrorHTML do
   @moduledoc """
   This module is invoked by your endpoint in case of errors on HTML requests.
 
   See config/config.exs.
   """
-  use NasaSpaceAppsWeb, :html
+  use EartherWeb, :html
 
   # If you want to customize your error pages,
   # uncomment the embed_templates/1 call below
   # and add pages to the error directory:
   #
-  #   * lib/nasa_space_apps_web/controllers/error_html/404.html.heex
-  #   * lib/nasa_space_apps_web/controllers/error_html/500.html.heex
+  #   * lib/earther_web/controllers/error_html/404.html.heex
+  #   * lib/earther_web/controllers/error_html/500.html.heex
   #
   # embed_templates "error_html/*"
 

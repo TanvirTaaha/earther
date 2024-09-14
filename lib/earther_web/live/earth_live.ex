@@ -1,5 +1,5 @@
-defmodule NasaSpaceAppsWeb.EarthLive do
-  use NasaSpaceAppsWeb, :live_view
+defmodule EartherWeb.EarthLive do
+  use EartherWeb, :live_view
 
   def mount(_params, _session, socket) do
     socket =

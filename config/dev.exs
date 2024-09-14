@@ -1,8 +1,8 @@
 import Config
 
 # Configure your database
-config :nasa_space_apps, NasaSpaceApps.Repo,
-  database: Path.expand("../nasa_space_apps_dev.db", __DIR__),
+config :earther, Earther.Repo,
+  database: Path.expand("../earther_dev.db", __DIR__),
   pool_size: 5,
   stacktrace: true,
   show_sensitive_data_on_connection_error: true
@@ -13,7 +13,7 @@ config :nasa_space_apps, NasaSpaceApps.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :nasa_space_apps, NasaSpaceAppsWeb.Endpoint,
+config :earther, EartherWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4001],
@@ -22,8 +22,8 @@ config :nasa_space_apps, NasaSpaceAppsWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "1nAXeEC5hS5V5iHd5XCZSmX0FZvgYcSAtV4IZ03qzXgYbnllPeWZuD4gndLTPexP",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:nasa_space_apps, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:nasa_space_apps, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:earther, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:earther, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -50,17 +50,17 @@ config :nasa_space_apps, NasaSpaceAppsWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :nasa_space_apps, NasaSpaceAppsWeb.Endpoint,
+config :earther, EartherWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/nasa_space_apps_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/earther_web/(controllers|live|components)/.*(ex|heex)$"
     ]
   ]
 
 # Enable dev routes for dashboard and mailbox
-config :nasa_space_apps, dev_routes: true
+config :earther, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

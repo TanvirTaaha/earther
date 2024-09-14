@@ -1,12 +1,12 @@
-defmodule NasaSpaceAppsWeb do
+defmodule EartherWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
 
   This can be used in your application as:
 
-      use NasaSpaceAppsWeb, :controller
-      use NasaSpaceAppsWeb, :html
+      use EartherWeb, :controller
+      use EartherWeb, :html
 
   The definitions below will be executed for every controller,
   component, etc, so keep them short and clean, focused
@@ -40,10 +40,10 @@ defmodule NasaSpaceAppsWeb do
     quote do
       use Phoenix.Controller,
         formats: [:html, :json],
-        layouts: [html: NasaSpaceAppsWeb.Layouts]
+        layouts: [html: EartherWeb.Layouts]
 
       import Plug.Conn
-      import NasaSpaceAppsWeb.Gettext
+      import EartherWeb.Gettext
 
       unquote(verified_routes())
     end
@@ -52,7 +52,7 @@ defmodule NasaSpaceAppsWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {NasaSpaceAppsWeb.Layouts, :app}
+        layout: {EartherWeb.Layouts, :app}
 
       unquote(html_helpers())
     end
@@ -84,8 +84,8 @@ defmodule NasaSpaceAppsWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import NasaSpaceAppsWeb.CoreComponents
-      import NasaSpaceAppsWeb.Gettext
+      import EartherWeb.CoreComponents
+      import EartherWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
@@ -98,9 +98,9 @@ defmodule NasaSpaceAppsWeb do
   def verified_routes do
     quote do
       use Phoenix.VerifiedRoutes,
-        endpoint: NasaSpaceAppsWeb.Endpoint,
-        router: NasaSpaceAppsWeb.Router,
-        statics: NasaSpaceAppsWeb.static_paths()
+        endpoint: EartherWeb.Endpoint,
+        router: EartherWeb.Router,
+        statics: EartherWeb.static_paths()
     end
   end
 

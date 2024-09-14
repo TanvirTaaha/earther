@@ -1,4 +1,4 @@
-defmodule NasaSpaceAppsWeb.ErrorJSON do
+defmodule EartherWeb.ErrorJSON do
   @moduledoc """
   This module is invoked by your endpoint in case of errors on JSON requests.
 

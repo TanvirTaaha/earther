@@ -8,8 +8,8 @@ const path = require("path")
 module.exports = {
   content: [
     "./js/**/*.js",
-    "../lib/nasa_space_apps_web.ex",
-    "../lib/nasa_space_apps_web/**/*.*ex"
+    "../lib/earther_web.ex",
+    "../lib/earther_web/**/*.*ex"
   ],
   theme: {
     extend: {

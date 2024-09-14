@@ -1,12 +1,12 @@
-defmodule NasaSpaceAppsWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :nasa_space_apps
+defmodule EartherWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :earther
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_nasa_space_apps_key",
+    key: "_earther_key",
     signing_salt: "2nQP70jk",
     same_site: "Lax"
   ]
@@ -21,9 +21,9 @@ defmodule NasaSpaceAppsWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :nasa_space_apps,
+    from: :earther,
     gzip: false,
-    only: NasaSpaceAppsWeb.static_paths()
+    only: EartherWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -31,7 +31,7 @@ defmodule NasaSpaceAppsWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :nasa_space_apps
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :earther
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -49,5 +49,5 @@ defmodule NasaSpaceAppsWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug NasaSpaceAppsWeb.Router
+  plug EartherWeb.Router
 end

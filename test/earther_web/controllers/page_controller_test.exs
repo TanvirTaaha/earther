@@ -1,5 +1,5 @@
-defmodule NasaSpaceAppsWeb.PageControllerTest do
-  use NasaSpaceAppsWeb.ConnCase
+defmodule EartherWeb.PageControllerTest do
+  use EartherWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")
