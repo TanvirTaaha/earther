@@ -2,7 +2,8 @@
   "files.autoSave": "onFocusChange",
   "files.autoSaveDelay": 1000,
   "files.associations": {
-    "*.heex": "phoenix-heex"
+    "*.heex": "phoenix-heex",
+    "*.config": "plaintext"
   },
   "scss.validate": false,
   "css.validate": false,

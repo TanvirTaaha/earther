@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "deploy": "cd .. && mix assets.deploy && rm -f _build/esbuild"
+  },
   "dependencies": {
     "tailwind-scrollbar-hide": "^1.1.7",
     "three": "^0.168.0"
