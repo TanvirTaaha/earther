@@ -14,5 +14,6 @@
   "elixirLS.fetchDeps": false,
   "editor.formatOnPaste": true,
   "explorer.autoReveal": false,
-  "explorer.compactFolders": true
+  "explorer.compactFolders": true,
+  "ros.distro": "noetic"
 }
